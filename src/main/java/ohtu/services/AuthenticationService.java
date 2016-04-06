@@ -39,7 +39,9 @@ public class AuthenticationService {
     }
 
     private boolean invalid(String username, String password) {
-        // validity check of username and password
+        if (password.length()<8) return true;
+        if (password.matches("[a-zA-Z]+")) return true;
+        if (username.length()<3) return true;
 
         return false;
     }
