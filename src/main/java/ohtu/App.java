@@ -27,21 +27,20 @@ public class App {
     }
 
     public void run() {
-        while (true) {
-            String command = io.readLine(">");
-
-            if (command.isEmpty()) {
-                break;
-            }
-
+        
+        String command = io.readLine(">");
+        while (!command.isEmpty()) {
+            execute(command);
+            command = io.readLine(">");
+        }
+    }
+    
+    private void execute(String command) {
             if (command.equals("new")) {
                 newCommand();
-
             } else if (command.equals("login")) {
                 loginCommand();
             }
-
-        }
     }
     
     private void loginCommand() {

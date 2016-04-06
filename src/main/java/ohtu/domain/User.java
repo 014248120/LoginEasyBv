@@ -17,4 +17,11 @@ public class User {
     public String getUsername() {
         return username;
     }
+    
+    public boolean equals(Object o) {
+        if (!o.getClass().equals(User.class)) return false;
+        
+        User u = (User) o;
+        return u.getUsername().equals(this.username) && u.getPassword().equals(this.password);
+    }
 }

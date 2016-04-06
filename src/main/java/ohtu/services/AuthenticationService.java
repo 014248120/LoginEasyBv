@@ -14,14 +14,7 @@ public class AuthenticationService {
     }
 
     public boolean logIn(String username, String password) {
-        for (User user : userDao.listAll()) {
-            if (user.getUsername().equals(username)
-                    && user.getPassword().equals(password)) {
-                return true;
-            }
-        }
-
-        return false;
+        return userDao.listAll().contains(new User(username, password));
     }
 
     public boolean createUser(String username, String password) {
@@ -39,10 +32,14 @@ public class AuthenticationService {
     }
 
     private boolean invalid(String username, String password) {
-        if (password.length()<8) return true;
-        if (password.matches("[a-zA-Z]+")) return true;
-        if (username.length()<3) return true;
-
-        return false;
+        return (invalidPassword(password) || invalidUsername(username));
+    }
+    
+    private boolean invalidPassword(String password) {
+        return (password.length()<8 || password.matches("[a-zA-Z]+"));
+    }
+    
+    private boolean invalidUsername(String username) {
+        return username.length()<3;
     }
 }
