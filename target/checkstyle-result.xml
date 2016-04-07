@@ -15,6 +15,5 @@
 <file name="/home/juho/LoginEasyBv/src/main/java/ohtu/domain/User.java">
 </file>
 <file name="/home/juho/LoginEasyBv/src/main/java/ohtu/App.java">
-<error line="29" column="5" severity="error" message="Cyclomatic Complexity is 4 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
 </file>
 </checkstyle>

@@ -36,14 +36,15 @@ public class App {
     }
     
     private void execute(String command) {
+        
         if (command.equals("new")) {
-            newCommand();
+            executeNew();
         } else if (command.equals("login")) {
-            loginCommand();
+            executeLogin();
         }
     }
     
-    private void loginCommand() {
+    private void executeLogin() {
         String[] usernameAndPasword = ask();
         if (auth.logIn(usernameAndPasword[0], usernameAndPasword[1])) {
             io.print("logged in");
@@ -52,7 +53,7 @@ public class App {
         }
     }
     
-    private void newCommand() {
+    private void executeNew() {
         String[] usernameAndPasword = ask();
         if (auth.createUser(usernameAndPasword[0], usernameAndPasword[1])) {
             io.print("new user registered");
@@ -67,10 +68,6 @@ public class App {
         App app = (App) ctx.getBean("app");
         app.run();
         
-//        UserDao dao = new InMemoryUserDao();
-//        IO io = new ConsoleIO();
-//        AuthenticationService auth = new AuthenticationService(dao);
-//        new App(io, auth).run();
     }
     
     // testejä debugatessa saattaa olla hyödyllistä testata ohjelman ajamista
