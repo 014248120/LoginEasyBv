@@ -44,16 +44,9 @@ public class FileUserDao implements UserDao {
 
     @Override
     public User findByName(String name) {
-        try {
-            Scanner scanner = new Scanner(file);
-            
-            while(scanner.hasNext()) {
-                String userInfo = scanner.nextLine();
-                String[] usernameAndPassword = userInfo.split(":");
-                if (usernameAndPassword[0].equals(name)) return new User(usernameAndPassword[0], usernameAndPassword[1]);
-            }
-        } catch (Exception e) {
-            System.out.println("Something went wrong");
+        List<User> users = listAll();
+        for (User u : users) {
+            if (u.getUsername().equals(name)) return u;
         }
         return null;
     }
