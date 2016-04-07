@@ -8,7 +8,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class App {
 
-private IO io;
+    private IO io;
     private AuthenticationService auth;
 
     public App(IO io, AuthenticationService auth) {
