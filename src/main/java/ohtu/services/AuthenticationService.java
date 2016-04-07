@@ -1,8 +1,6 @@
 package ohtu.services;
 
 import ohtu.domain.User;
-import java.util.ArrayList;
-import java.util.List;
 import ohtu.data_access.UserDao;
 
 public class AuthenticationService {
@@ -40,6 +38,6 @@ public class AuthenticationService {
     }
     
     private boolean invalidUsername(String username) {
-        return username.length()<3;
+        return username.length()<5;
     }
 }
