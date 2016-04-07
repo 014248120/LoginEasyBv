@@ -1,8 +1,5 @@
 package ohtu;
 
-import ohtu.data_access.InMemoryUserDao;
-import ohtu.data_access.UserDao;
-import ohtu.io.ConsoleIO;
 import ohtu.io.IO;
 import ohtu.services.AuthenticationService;
 
@@ -11,7 +8,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class App {
 
-    private IO io;
+private IO io;
     private AuthenticationService auth;
 
     public App(IO io, AuthenticationService auth) {
