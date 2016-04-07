@@ -36,11 +36,11 @@ public class App {
     }
     
     private void execute(String command) {
-            if (command.equals("new")) {
-                newCommand();
-            } else if (command.equals("login")) {
-                loginCommand();
-            }
+        if (command.equals("new")) {
+            newCommand();
+        } else if (command.equals("login")) {
+            loginCommand();
+        }
     }
     
     private void loginCommand() {
